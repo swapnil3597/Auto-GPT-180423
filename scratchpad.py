@@ -15,4 +15,17 @@ openai.ChatCompletion.create(
                 )
 
 # works
+openai.ChatCompletion.create(
+    engine="gpt35turbo-model",
+    messages=[{"role": "user", "content": "You are a helpful assistant."}]
+    )
+
+# Doesn't work
+openai.ChatCompletion.create(
+    deployment_id="gpt35turbo-model",
+    messages=[{"role": "user", "content": "You are a helpful assistant."}]
+    )
+
+
+# works
 openai.Completion.create(engine="textdavinci003-model", prompt="Write a tagline for an ice cream shop.", max_tokens=10)
